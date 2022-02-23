@@ -1,11 +1,12 @@
 package me.iori.sa;
 
-import org.springframework.context.ApplicationContext;
+import me.iori.sa.asciiPanel.AsciiPanel;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-    System.out.println("Hello, world!");
+    var context = new ClassPathXmlApplicationContext("context.xml");
+    var panel = context.getBean("panel", AsciiPanel.class);
+    panel.setBackground(AsciiPanel.brightBlack);
   }
 }
